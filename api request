@@ -1,0 +1,41 @@
+Question no:1.
+how to compare 2 json have the same properties without order?
+a.var obj={name:"person1",age:5};
+b.var obj1={age:5,name:"person1"}
+answer:
+
+var obj1={name:"person1",age:5};
+var obj2={age:5,name:"person1"};
+var res=JSON.stringify(obj1);
+var res1=JSON.stringify(obj2);
+if(res===res1){
+  console.log("true");
+}
+else
+{
+  console.log("false")};
+  
+  Question no:2.
+ Use the rest of country API URL=rest country .com//v3.and displa the all country flog in the console?
+ var request=new XMLHttpRequest();
+ request.open("GET","https://restcountries.com/v2/all");
+ request.send();
+ request.onload=function(){
+var result=JSON.parse(request.response);
+console.log(result);
+}
+
+
+Question no:3
+
+Use the same country print the all country name,region,subregion,population?
+
+var request=new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function(){
+    var result=JSON.parse(request.response);
+    for (var obj of result){
+    console.log(obj.name,obj.region,obj.population,obj.subregion);
+    }
+}
